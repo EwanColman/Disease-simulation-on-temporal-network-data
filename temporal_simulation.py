@@ -69,8 +69,7 @@ def get_infection_tree(seed,contacts,time,params):
             #select a random time for the infection to occur
             r=random.random()
             #this is equivalent to an attempt at transmission occuring each second (different beta depending on the location)           
-            l=params['beta']/(1-params['beta'])            
-            #l=-np.log(1-b)                              
+            l=-np.log(1-params['beta'])                              
             infection_time=exposure_start+int(-(1/l)*np.log(1-r))             
 
             #check that the interaction is with a susceptible node, that it is not a sick day at work                                  
